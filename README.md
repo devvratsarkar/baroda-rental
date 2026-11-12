@@ -1,6 +1,6 @@
-# Baroda Rental
+# Baroda Realtor
 
-Baroda Rental is a React + Vite app. The home page shows hello.
+A React + Vite site for Baroda Realtor. Listings, services, and contact details come from [barodarealtor.in](https://www.barodarealtor.in/). The layout follows a rental marketplace: full-width property slider, search, listing cards, localities, and testimonials.
 
 ## Scripts
 
