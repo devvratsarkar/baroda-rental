@@ -242,7 +242,7 @@ export const PROPERTIES = [
 function listing(slug, title, location, type, size, intent, bhkOrImage = '', image = '') {
   let bhk = ''
   let photo = image || PLACEHOLDER
-  if (bhkOrImage.startsWith('http')) photo = bhkOrImage
+  if (bhkOrImage.startsWith('http') || bhkOrImage.startsWith('/')) photo = bhkOrImage
   else bhk = bhkOrImage
   const city = location.split(',').slice(-1)[0].trim()
   return {
