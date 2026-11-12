@@ -281,26 +281,26 @@ export const HERO = PROPERTIES.filter((item) => item.featured).slice(0, 3).map((
 export const ABOUT_SCENE = 'https://main.wprentals.org/wp-content/uploads/2015/04/house-6-webp-400x314.webp'
 
 export const LOCALITIES = [
-  ['Padra, Vadodara', PLACEHOLDER],
-  ['Dahej, Bharuch', PLACEHOLDER],
-  ['Ajwa Road, Vadodara', PLACEHOLDER],
-  ['Jhagadia Gidc, Bharuch', PLACEHOLDER],
-  ['Old Padra Road, Vadodara', PLACEHOLDER],
+  ['Padra, Vadodara', 'https://dynamic.realestateindia.com/city_images/padra_93119.jpg'],
+  ['Dahej, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1239551_7-350x350.jpg'],
+  ['Ajwa Road, Vadodara', 'https://dynamic.realestateindia.com/city_images/ajwa-road_77966.jpeg'],
+  ['Jhagadia Gidc, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1371485_1-350x350.jpg'],
+  ['Old Padra Road, Vadodara', 'https://dynamic.realestateindia.com/city_images/old-padara-road_87337.jpg'],
   ['Gotri, Vadodara', 'https://dynamic.realestateindia.com/city_images/gotri_14991.jpg'],
   ['Vasna Road, Vadodara', 'https://dynamic.realestateindia.com/city_images/vasna-road_33384.jpg'],
-  ['Manjusar GIDC, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1389364_9-350x350.jpeg'],
+  ['Manjusar GIDC, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1179684_2-350x350.jpg'],
   ['Savli, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/973051_5-350x350.jpg'],
-  ['Dahej GIDC, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1239551_7-350x350.jpg'],
+  ['Dahej GIDC, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1239551_9-350x350.jpg'],
   ['Alkapuri, Vadodara', 'https://dynamic.realestateindia.com/city_images/alkapuri_56161.jpg'],
-  ['Sevasi, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1038857_18-350x350.jpg'],
+  ['Sevasi, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1038857_3-350x350.jpg'],
   ['Dabhoi, Vadodara', 'https://dynamic.realestateindia.com/city_images/dabhoi_74392.jpg'],
   ['Atladra, Vadodara', 'https://dynamic.realestateindia.com/city_images/atlardra_53561.jpg'],
-  ['Halol, Panchmahal', 'https://rei.wlimg.com/prop_images/2178647/985815_3-350x350.jpg'],
+  ['Halol, Panchmahal', 'https://rei.wlimg.com/prop_images/2178647/985810_1-350x350.jpg'],
   ['Halol, Vadodara', PLACEHOLDER],
-  ['Saykha Industrial Zone, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1394161_2-350x350.jpg'],
-  ['Mahapura, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1019749_1-350x350.jpg'],
+  ['Saykha Industrial Zone, Bharuch', 'https://rei.wlimg.com/prop_images/2178647/1394161_1-350x350.jpg'],
+  ['Mahapura, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/990429_1-350x350.jpg'],
   ['Dandia Bazar, Vadodara', 'https://dynamic.realestateindia.com/city_images/dandia-bazar_18414.jpg'],
-  ['Tarapur, Anand', 'https://rei.wlimg.com/prop_images/2178647/1371483_1-350x350.jpg'],
+  ['Tarapur, Anand', 'https://rei.wlimg.com/prop_images/2178647/1019868_2-350x350.jpg'],
   ['Sayajigunj, Vadodara', 'https://dynamic.realestateindia.com/city_images/sayajiganj_51189.jpg'],
   ['Vasna-bhayli-road, Vadodara', 'https://dynamic.realestateindia.com/city_images/vasna-bhayli-road_31275.jpg'],
   ['Savli Town, Vadodara', 'https://dynamic.realestateindia.com/city_images/savli-town_59293.jpg'],
@@ -377,6 +377,58 @@ export const PROPERTY_TYPES = [
   'Factory / Industrial Building',
   'Industrial Land / Plot',
   'Office Space',
+]
+
+export const CATEGORIES = [
+  {
+    title: 'Flats & Apartments',
+    tagline: 'Ready homes in Vadodara',
+    type: 'Flats & Apartments',
+    image: 'https://main.wprentals.org/wp-content/uploads/2023/03/8.jpeg',
+  },
+  {
+    title: 'Residential Plots',
+    tagline: 'Plots in growing areas',
+    type: 'Residential Plot',
+    image: 'https://main.wprentals.org/wp-content/uploads/2023/03/14.jpeg',
+  },
+  {
+    title: 'Farm Land',
+    tagline: 'Agricultural land nearby',
+    type: 'Agricultural/Farm Land',
+    image: 'https://main.wprentals.org/wp-content/uploads/2023/03/5.jpeg',
+  },
+  {
+    title: 'Office Space',
+    tagline: 'Workspaces for businesses',
+    type: 'Office Space',
+    image: 'https://main.wprentals.org/wp-content/uploads/2023/03/interior_july_2019-1170x921-webp.webp',
+  },
+  {
+    title: 'Commercial Land',
+    tagline: 'Sites for commercial use',
+    type: 'Commercial Lands /Inst. Land',
+    image: 'https://main.wprentals.org/wp-content/uploads/2023/03/category-webp.webp',
+  },
+]
+
+export const STEPS = [
+  {
+    title: 'Share your need',
+    copy: 'Tell us the area, budget, and whether you want to buy or rent.',
+  },
+  {
+    title: 'We shortlist options',
+    copy: 'You get properties that match, with location and price checked first.',
+  },
+  {
+    title: 'Visit the property',
+    copy: 'We arrange the visit and walk through the society, title, and surroundings.',
+  },
+  {
+    title: 'Close with confidence',
+    copy: 'Help with negotiation and paperwork until the deal is done.',
+  },
 ]
 
 export const BHK_OPTIONS = ['2 BHK', '3 BHK', '3.5 BHK', '4 BHK']

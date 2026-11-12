@@ -1,64 +1,52 @@
 import { Link } from 'react-router-dom'
-import { COMPANY, SERVICES } from '../data/content'
+import { ABOUT, COMPANY, PROPERTIES } from '../data/content'
 
 export default function Footer() {
+  const featured = PROPERTIES.filter((property) => property.featured).slice(0, 2)
+  const about = ABOUT.intro.split('. ').slice(0, 2).join('. ') + '.'
+
   return (
     <footer className="site-footer">
-      <div className="wrap">
-        <div className="footer-brand-row">
-          <Link className="footer-brand" to="/">
-            <img src={COMPANY.logo} alt="" />
-            <span>
-              <strong>{COMPANY.name}</strong>
-              <em>{COMPANY.tagline}</em>
-            </span>
-          </Link>
-          <div className="footer-actions">
-            <a href={COMPANY.phoneHref}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.2a13 13 0 0 0 6.3 6.3l1.2-2 4 1.5v3A2 2 0 0 1 18.5 19 15.5 15.5 0 0 1 5 5.5a2 2 0 0 1 1.5-2z" /></svg>
-              {COMPANY.phone}
-            </a>
-            <a href={`mailto:${COMPANY.email}`}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
-              Email
-            </a>
-            <a href={COMPANY.whatsapp} target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19l1.2-3.4A8 8 0 1 1 8.4 17.8L5 19z" /></svg>
-              WhatsApp
-            </a>
-          </div>
+      <div className="wrap footer-grid">
+        <div>
+          <h3>About {COMPANY.name}</h3>
+          <p className="footer-about">{about}</p>
         </div>
 
-        <div className="footer-grid">
-          <div>
-            <h3>Contact</h3>
-            <p className="footer-person">{COMPANY.contact}</p>
-            <p className="footer-address">{COMPANY.address}</p>
-            <a href={COMPANY.phoneHref}>{COMPANY.phone}</a>
-            <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
-            <a href={COMPANY.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
-          </div>
-          <div className="footer-links">
-            <h3>Explore</h3>
-            <Link to="/properties">Find Property</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/testimonials">Testimonials</Link>
-            <Link to="/projects/aashray-elegance">Aashray Elegance</Link>
-            <Link to="/contact">Contact Us</Link>
-          </div>
-          <div className="footer-links">
-            <h3>Services</h3>
-            {SERVICES.map((service) => (
-              <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>
-            ))}
-            <Link to="/emi-calculator">EMI Calculator</Link>
-            <Link to="/area-converter">Area Converter</Link>
-          </div>
+        <div>
+          <h3>Featured Listings</h3>
+          {featured.map((property) => (
+            <Link className="footer-listing" key={property.id} to={`/properties/${property.slug}`}>
+              <img src={property.image} alt="" />
+              <span>
+                <strong>{property.title}</strong>
+                <em>{property.location}</em>
+                <b>₹ {property.price}</b>
+              </span>
+            </Link>
+          ))}
         </div>
 
-        <div className="legal">
-          <span>© {new Date().getFullYear()} {COMPANY.name}. All Rights Reserved.</span>
-          <span>{COMPANY.tagline}</span>
+        <div className="footer-contact">
+          <h3>Contact</h3>
+          <p>{COMPANY.address}</p>
+          <a href={COMPANY.phoneHref}>{COMPANY.phone}</a>
+          <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+          <a href={COMPANY.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
+          <Link to="/">{COMPANY.name}</Link>
+        </div>
+      </div>
+
+      <div className="sub-footer">
+        <div className="wrap">
+          <div className="legal">
+            <span>© {new Date().getFullYear()} {COMPANY.name}. All Rights Reserved.</span>
+            <span className="legal-tag">{COMPANY.tagline}</span>
+            <nav aria-label="Footer">
+              <Link to="/about">About Us</Link>
+              <Link to="/contact">Contact</Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

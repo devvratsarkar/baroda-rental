@@ -6,11 +6,14 @@ import {
   ABOUT_SCENE,
   BHK_OPTIONS,
   BUDGETS,
+  CATEGORIES,
+  COMPANY,
   HERO,
   LOCALITIES,
   PROPERTIES,
   PROPERTY_TYPES,
   SERVICES,
+  STEPS,
   TESTIMONIALS,
 } from '../../data/content'
 
@@ -179,6 +182,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section-categories">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">Browse</p>
+            <h2>Listings by Category</h2>
+            <p>Homes, plots, land, and commercial space currently with Baroda Realtor</p>
+          </div>
+          <div className="category-grid">
+            {CATEGORIES.map((category) => {
+              const count = PROPERTIES.filter((property) => property.type === category.type).length
+              return (
+                <Link
+                  className="category-card"
+                  key={category.type}
+                  to={`/properties?type=${encodeURIComponent(category.type)}`}
+                  style={{ backgroundImage: `url(${category.image})` }}
+                >
+                  <strong>{category.title}</strong>
+                  <em>{category.tagline}</em>
+                  <span>{count} {count === 1 ? 'Listing' : 'Listings'}</span>
+                  <b>Discover</b>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="section section-services">
         <div className="wrap">
           <div className="section-head">
@@ -195,6 +226,25 @@ export default function HomePage() {
                   <span className="info-more">Learn more</span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-steps">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="eyebrow">How it works</p>
+            <h2>A clear path from enquiry to keys</h2>
+            <p>The same support whether you are buying, renting, or listing a property</p>
+          </div>
+          <div className="steps">
+            {STEPS.map((step, index) => (
+              <article className="step" key={step.title}>
+                <span>{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -239,6 +289,29 @@ export default function HomePage() {
                 <strong>{item.name}</strong>
               </blockquote>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="host-banner"
+        style={{ backgroundImage: 'url(https://main.wprentals.org/wp-content/uploads/2023/03/bacground-webp.webp)' }}
+      >
+        <div className="wrap host-banner-inner">
+          <h2>List your property with an advisor who knows Vadodara</h2>
+          <Link className="host-btn" to="/post-property">List your property</Link>
+        </div>
+      </section>
+
+      <section className="plan-band">
+        <div className="wrap plan-band-inner">
+          <div>
+            <h2>Talk to us before you buy</h2>
+            <p>Call or send a message about homes, plots, and land around Vadodara. We answer promptly.</p>
+          </div>
+          <div className="plan-actions">
+            <a className="btn" href={COMPANY.phoneHref}>{COMPANY.phone}</a>
+            <Link className="btn btn-line" to="/contact">Contact</Link>
           </div>
         </div>
       </section>
