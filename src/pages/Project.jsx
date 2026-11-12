@@ -4,7 +4,7 @@ import EnquiryForm from '../components/EnquiryForm'
 export default function ProjectPage() {
   return (
     <>
-      <section className="page-hero" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(https://dynamic.realestateindia.com/city_images/gotri_14991.jpg)' }}>
+      <section className="page-hero" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(/images/gotri_14991.jpg)' }}>
         <div className="wrap">
           <p className="crumbs">Home / Our Projects / Aashray Elegance</p>
           <h1>Aashray Elegance</h1>

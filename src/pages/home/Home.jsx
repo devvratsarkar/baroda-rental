@@ -295,7 +295,7 @@ export default function HomePage() {
 
       <section
         className="host-banner"
-        style={{ backgroundImage: 'url(https://main.wprentals.org/wp-content/uploads/2023/03/bacground-webp.webp)' }}
+        style={{ backgroundImage: 'url(/images/bacground-webp.webp)' }}
       >
         <div className="wrap host-banner-inner">
           <h2>List your property with an advisor who knows Vadodara</h2>

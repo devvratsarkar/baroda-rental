@@ -634,7 +634,7 @@ p { line-height: 1.7; }
   color: #fff;
   background:
     linear-gradient(rgba(28, 32, 40, 0.5), rgba(28, 32, 40, 0.5)),
-    url("https://main.wprentals.org/wp-content/uploads/2015/04/23.jpeg") center / cover no-repeat;
+    url("/images/23.jpeg") center / cover no-repeat;
 }
 .page-hero h1 {
   color: #fff;
