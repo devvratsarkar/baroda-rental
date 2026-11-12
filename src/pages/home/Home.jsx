@@ -179,16 +179,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section section-services">
         <div className="wrap">
           <div className="section-head">
+            <p className="eyebrow">What we do</p>
             <h2>Services We Offer</h2>
+            <p>Buying, renting, and advisory support across Vadodara and nearby cities</p>
           </div>
           <div className="grid cards-4">
             {SERVICES.map((service) => (
               <Link className="info-card" key={service.slug} to={`/services/${service.slug}`}>
                 <img src={service.image} alt={service.title} />
-                <div className="body"><h3>{service.title}</h3></div>
+                <div className="body">
+                  <h3>{service.title}</h3>
+                  <span className="info-more">Learn more</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -214,23 +219,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section section-quotes">
         <div className="wrap">
-          <div className="section-head">
-            <h2>Testimonials</h2>
-            <p>What clients say about working with Baroda Realtor</p>
+          <div className="section-head section-head-row">
+            <div>
+              <p className="eyebrow">Clients</p>
+              <h2>Testimonials</h2>
+              <p>What clients say about working with Baroda Realtor</p>
+            </div>
+            <Link className="text-link" to="/testimonials">
+              View all testimonials
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </Link>
           </div>
           <div className="grid cards-3">
             {TESTIMONIALS.slice(0, 6).map((item) => (
               <blockquote className="quote-card" key={item.name + item.quote}>
-                <p>“{item.quote}”</p>
+                <p>{item.quote}</p>
                 <strong>{item.name}</strong>
               </blockquote>
             ))}
           </div>
-          <p style={{ textAlign: 'center', marginTop: 28 }}>
-            <Link className="btn" to="/testimonials">View all testimonials</Link>
-          </p>
         </div>
       </section>
     </>

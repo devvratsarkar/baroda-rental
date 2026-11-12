@@ -335,7 +335,7 @@ p { line-height: 1.7; }
 }
 
 .section { padding: 78px 0; }
-.section-featured { background: #f6f7f9; }
+.section.section-featured { padding-bottom: 16px; background: #f6f7f9; }
 .section h2, .page-hero h1 {
   margin: 0;
   color: #2f343c;
@@ -482,7 +482,7 @@ p { line-height: 1.7; }
   letter-spacing: 0.01em;
 }
 
-.section-places { padding-top: 0; background: #fff; }
+.section.section-places { padding-top: 36px; padding-bottom: 20px; background: #fff; }
 .place-card {
   position: relative;
   display: block;
@@ -527,10 +527,40 @@ p { line-height: 1.7; }
 }
 
 .info-card {
+  display: block;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(40, 45, 51, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(40, 45, 51, 0.12);
+}
+.info-card img {
+  height: 176px;
+  transition: transform 0.45s ease;
+}
+.info-card:hover img { transform: scale(1.05); }
+.info-card h3 {
+  font-size: 16px;
+  color: #2f343c;
 }
 .info-card:hover h3 { color: var(--accent); }
+.info-more {
+  display: inline-flex;
+  margin-top: 8px;
+  color: #a672e7;
+  font-size: 13px;
+  font-weight: 500;
+}
+.section.section-services {
+  padding-top: 48px;
+  padding-bottom: 56px;
+  background: #f6f7f9;
+}
 
 .split {
   display: grid;
@@ -558,13 +588,44 @@ p { line-height: 1.7; }
 }
 .stat span { color: var(--muted); font-size: 13px; }
 
+.section.section-quotes { padding-top: 56px; background: #fff; }
 .quote-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 22px;
+  padding: 26px 24px 20px;
   border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(40, 45, 51, 0.06);
 }
-.quote-card p { margin-top: 0; font-size: 16px; }
-.quote-card strong { font-weight: 500; }
+.quote-card::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 6px;
+  color: #a672e7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  line-height: 0.8;
+}
+.quote-card p {
+  margin: 0;
+  flex: 1;
+  color: #2f343c;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.quote-card strong {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f0;
+  color: #2f343c;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
 
 .page-hero {
   padding: 72px 0 56px;

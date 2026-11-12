@@ -281,6 +281,11 @@ export const HERO = PROPERTIES.filter((item) => item.featured).slice(0, 3).map((
 export const ABOUT_SCENE = 'https://main.wprentals.org/wp-content/uploads/2015/04/house-6-webp-400x314.webp'
 
 export const LOCALITIES = [
+  ['Padra, Vadodara', PLACEHOLDER],
+  ['Dahej, Bharuch', PLACEHOLDER],
+  ['Ajwa Road, Vadodara', PLACEHOLDER],
+  ['Jhagadia Gidc, Bharuch', PLACEHOLDER],
+  ['Old Padra Road, Vadodara', PLACEHOLDER],
   ['Gotri, Vadodara', 'https://dynamic.realestateindia.com/city_images/gotri_14991.jpg'],
   ['Vasna Road, Vadodara', 'https://dynamic.realestateindia.com/city_images/vasna-road_33384.jpg'],
   ['Manjusar GIDC, Vadodara', 'https://rei.wlimg.com/prop_images/2178647/1389364_9-350x350.jpeg'],

@@ -13,7 +13,7 @@ export default function TestimonialsPage() {
         <div className="wrap grid cards-3">
           {TESTIMONIALS.map((item) => (
             <blockquote className="quote-card" key={item.name + item.quote}>
-              <p>“{item.quote}”</p>
+              <p>{item.quote}</p>
               <strong>{item.name}</strong>
             </blockquote>
           ))}
