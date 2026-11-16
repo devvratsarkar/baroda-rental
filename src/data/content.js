@@ -56,20 +56,19 @@ export const ABOUT = {
   ],
 }
 
-const HERO_SCENES = [
-  '/images/featured-property-webp-1920x790.webp',
-  '/images/white_booking_versionwebp_-1920x790-1.webp',
-  '/images/23.jpeg',
-]
+const BANNER_IDS = ['1179684', '1141967']
 
-export const HERO = PROPERTIES.filter((item) => item.featured).slice(0, 3).map((item, index) => ({
-  image: HERO_SCENES[index],
-  price: `₹ ${item.price}`,
-  title: item.location,
-  copy: item.description,
-  to: `/properties/${item.slug}`,
-  cta: 'View more',
-}))
+export const HERO = BANNER_IDS.map((id) => {
+  const item = PROPERTIES.find((property) => property.id === id)
+  return {
+    image: `/images/banners/${id}.jpg`,
+    price: item.price === 'On request' ? 'Price on request' : `₹ ${item.price}`,
+    title: item.location,
+    copy: item.title,
+    to: `/properties/${item.slug}`,
+    cta: 'View more',
+  }
+})
 
 export const ABOUT_SCENE = '/images/house-6-webp-400x314.webp'
 
