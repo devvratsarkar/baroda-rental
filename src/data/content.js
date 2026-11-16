@@ -1,3 +1,7 @@
+import { LISTINGS as PROPERTIES } from './listings'
+
+export { PROPERTIES }
+
 export const COMPANY = {
   name: 'Baroda Realtor',
   tagline: 'Be safe before you buy property',
@@ -52,217 +56,6 @@ export const ABOUT = {
   ],
 }
 
-const PLACEHOLDER = '/images/no-property-image.png'
-
-export const PROPERTIES = [
-  {
-    id: '980539',
-    slug: 'raval-ajwa-road-38000-sq-ft',
-    title: 'Raval Ajwa Road 38000sq Ft Sell',
-    price: '1.35 Cr.',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Ajwa Road, Vadodara',
-    city: 'Vadodara',
-    type: 'Residential Plot',
-    bhk: '',
-    size: '38000 Sq.ft.',
-    image: '/images/980539_3-350x350.jpg',
-    description:
-      'Moje Raval near Ajwa sarovar road tech juni sarat taital clear 38000 sq.ft land very good location.',
-    featured: true,
-  },
-  {
-    id: '1019864',
-    slug: '3-bhk-flats-alkapuri-2500',
-    title: '3 BHK Flats & Apartments For Sale In Alkapuri, Vadodara (2500 Sq.ft.)',
-    price: '1.40 Cr.',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Alkapuri, Vadodara',
-    city: 'Vadodara',
-    type: 'Flats & Apartments',
-    bhk: '3 BHK',
-    size: '2500 Sq.ft.',
-    image: '/images/1019864_1-350x350.jpg',
-    description: '3 BHK Flats & Apartments for Sale in Alkapuri, Vadodara.',
-    featured: true,
-  },
-  {
-    id: '1019867',
-    slug: '3-bhk-flats-gotri-1600',
-    title: '3 BHK Flats & Apartments For Sale In Gotri, Vadodara (1600 Sq.ft.)',
-    price: '45 Lac',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Gotri, Vadodara',
-    city: 'Vadodara',
-    type: 'Flats & Apartments',
-    bhk: '3 BHK',
-    size: '1600 Sq.ft.',
-    image: '/images/1019867_1-350x350.jpg',
-    description: '3 BHK Flats & Apartments for Sale in Gotri, Vadodara.',
-    featured: true,
-  },
-  {
-    id: '1019868',
-    slug: 'agricultural-land-tarapur-anand',
-    title: '17500000 Sq.ft. Agricultural/Farm Land For Sale In Tarapur, Anand',
-    price: '5.25 Cr.',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Tarapur, Anand',
-    city: 'Anand',
-    type: 'Agricultural/Farm Land',
-    bhk: '',
-    size: '175000 Sq.ft.',
-    image: '/images/1019868_1-350x350.jpg',
-    description:
-      'Tarapur sale in land 1.75 lacs sq ft old condition and agriculture use for mine road tech tarapur to badhodra road.',
-    featured: true,
-  },
-  {
-    id: '1019870',
-    slug: 'flats-alkapuri-1700',
-    title: '1700 Sq.ft. Flats & Apartments For Sale In Alkapuri, Vadodara',
-    price: '85 Lac',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Alkapuri, Vadodara',
-    city: 'Vadodara',
-    type: 'Flats & Apartments',
-    bhk: '',
-    size: '1700 Sq.ft.',
-    image: '/images/1019870_1-350x350.jpg',
-    description: 'Vishwa Appartment, 81 Vishwas colony, Alkapuri.',
-    featured: true,
-  },
-  {
-    id: '1021281',
-    slug: '2-bhk-flats-gotri-1350',
-    title: '2 BHK Flats & Apartments For Sale In Gotri, Vadodara (1350 Sq.ft.)',
-    price: '35 Lac',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Gotri, Vadodara',
-    city: 'Vadodara',
-    type: 'Flats & Apartments',
-    bhk: '2 BHK',
-    size: '1350 Sq.ft.',
-    image: '/images/1021281_12-350x350.jpg',
-    description:
-      '2 BHK FLAT SALE IN GOTRI NEARLY NARAYAN GARDN ROAD VADODARA RATE: ₹35LACS NEGOTIABLE 1 FLOOR.',
-    featured: true,
-  },
-  {
-    id: '1437205',
-    slug: 'office-space-gotri-1500',
-    title: 'Office Space for Sale in Gotri, Vadodara',
-    price: 'On request',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Gotri, Vadodara',
-    city: 'Vadodara',
-    type: 'Office Space',
-    bhk: '',
-    size: '1500 Sq.ft.',
-    image: '/images/570421.jpg',
-    description: '1500 Sq.ft. office space for sale in Gotri, Vadodara.',
-    featured: false,
-    hero: true,
-  },
-  {
-    id: '1394162',
-    slug: 'commercial-land-tarsali',
-    title: 'Commercial Lands /Inst. Land for Sale in Tarsali, Vadodara',
-    price: 'On request',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Tarsali, Vadodara',
-    city: 'Vadodara',
-    type: 'Commercial Lands /Inst. Land',
-    bhk: '',
-    size: '',
-    image: '/images/570422.jpg',
-    description: 'Commercial land / institutional land for sale in Tarsali, Vadodara.',
-    featured: false,
-    hero: true,
-  },
-  {
-    id: '1021301',
-    slug: '4-bhk-flats-vasna-road',
-    title: '4 BHK Flats & Apartments for Sale in Vasna Road, Vadodara',
-    price: 'On request',
-    status: 'For Sale',
-    intent: 'Buy',
-    location: 'Vasna Road, Vadodara',
-    city: 'Vadodara',
-    type: 'Flats & Apartments',
-    bhk: '4 BHK',
-    size: '',
-    image: '/images/570423.jpg',
-    description: '4 BHK flats and apartments for sale in Vasna Road, Vadodara.',
-    featured: false,
-    hero: true,
-  },
-  {
-    id: '1141967',
-    slug: 'factory-savli-50000',
-    title: '50000 Sq.ft. Factory / Industrial Building for Rent in Savli, Vadodara',
-    price: 'On request',
-    status: 'For Rent',
-    intent: 'Rent',
-    location: 'Savli, Vadodara',
-    city: 'Vadodara',
-    type: 'Factory / Industrial Building',
-    bhk: '',
-    size: '50000 Sq.ft.',
-    image: '/images/570425.jpg',
-    description: '50000 Sq.ft. factory / industrial building for rent in Savli, Vadodara.',
-    featured: false,
-    hero: true,
-  },
-  listing('factory-manjusar-10250', '10250 Sq.ft. Factory / Industrial Building for Sale in Manjusar GIDC, Vadodara', 'Manjusar GIDC, Vadodara', 'Factory / Industrial Building', '10250 Sq.ft.', 'Buy', '/images/1389364_9-350x350.jpeg'),
-  listing('factory-jhagadia', 'Factory / Industrial Building for Sale in Jhagadia Gidc, Bharuch', 'Jhagadia Gidc, Bharuch', 'Factory / Industrial Building', '', 'Buy'),
-  listing('industrial-halol-45000', '45000 Sq.ft. Industrial Land / Plot for Sale in Halol, Vadodara', 'Halol, Vadodara', 'Industrial Land / Plot', '45000 Sq.ft.', 'Buy'),
-  listing('industrial-halol-panchmahal-72000', '72000 Sq.ft. Industrial Land / Plot for Sale in Halol, Panchmahal', 'Halol, Panchmahal', 'Industrial Land / Plot', '72000 Sq.ft.', 'Buy', '/images/985815_3-350x350.jpg'),
-  listing('industrial-dahej-9000', '9000 Sq. Meter Industrial Land / Plot for Sale in Dahej, Bharuch', 'Dahej, Bharuch', 'Industrial Land / Plot', '9000 Sq. Meter', 'Buy', '/images/1239551_7-350x350.jpg'),
-  listing('shop-sayajigunj-260', '260 Sq.ft. Commercial Shops for Sale in Sayajigunj, Vadodara', 'Sayajigunj, Vadodara', 'Commercial Shops', '260 Sq.ft.', 'Buy', '/images/sayajiganj_51189.jpg'),
-  listing('plot-dabhoi-500000', '500000 Sq.ft. Residential Plot for Sale in Dabhoi, Vadodara', 'Dabhoi, Vadodara', 'Residential Plot', '500000 Sq.ft.', 'Buy', '/images/dabhoi_74392.jpg'),
-  listing('villa-dabhoi-rs', '3 BHK Individual Houses / Villas for Sale in Dabhoi R S, Vadodara', 'Dabhoi R S, Vadodara', 'Individual Houses', '', 'Buy', '3 BHK'),
-  listing('industrial-rent-manjusar', '20000 Sq.ft. Industrial Land / Plot for Rent in Manjusar GIDC, Vadodara', 'Manjusar GIDC, Vadodara', 'Industrial Land / Plot', '20000 Sq.ft.', 'Rent', '/images/1389364_9-350x350.jpeg'),
-  listing('industrial-saykha', 'Industrial Land / Plot for Sale in Saykha Industrial Zone, Bharuch', 'Saykha Industrial Zone, Bharuch', 'Industrial Land / Plot', '', 'Buy', '/images/1394161_2-350x350.jpg'),
-  listing('farm-sherkhi', '65000 Sq.ft. Agricultural/Farm Land for Sale in Sherkhi, Vadodara', 'Sherkhi, Vadodara', 'Agricultural/Farm Land', '65000 Sq.ft.', 'Buy'),
-  listing('industrial-halol-panchmahal-45000', '45000 Sq.ft. Industrial Land / Plot for Sale in Halol, Panchmahal', 'Halol, Panchmahal', 'Industrial Land / Plot', '45000 Sq.ft.', 'Buy', '/images/985815_3-350x350.jpg'),
-  listing('3-bhk-gotri-road', '3 BHK Flats & Apartments for Sale in Gotri Road, Vadodara', 'Gotri Road, Vadodara', 'Flats & Apartments', '', 'Buy', '3 BHK', '/images/gotri_14991.jpg'),
-  listing('plot-vasna-harinagar', 'Residential open plot of 3400 sq.ft on Vasana-harinagar road for sale', 'Vasna Road, Vadodara', 'Residential Plot', '3400 Sq.ft.', 'Buy', '', '/images/vasna-road_33384.jpg'),
-  listing('4-bhk-villa-vadodara', '4 BHK Individual Houses / Villas for Sale in Vadodara', 'Vadodara', 'Individual Houses', '', 'Buy', '4 BHK'),
-]
-
-function listing(slug, title, location, type, size, intent, bhkOrImage = '', image = '') {
-  let bhk = ''
-  let photo = image || PLACEHOLDER
-  if (bhkOrImage.startsWith('http') || bhkOrImage.startsWith('/')) photo = bhkOrImage
-  else bhk = bhkOrImage
-  const city = location.split(',').slice(-1)[0].trim()
-  return {
-    id: slug,
-    slug,
-    title,
-    price: 'On request',
-    status: intent === 'Rent' ? 'For Rent' : 'For Sale',
-    intent,
-    location,
-    city,
-    type,
-    bhk,
-    size,
-    image: photo,
-    description: title,
-    featured: false,
-  }
-}
-
 const HERO_SCENES = [
   '/images/featured-property-webp-1920x790.webp',
   '/images/white_booking_versionwebp_-1920x790-1.webp',
@@ -296,7 +89,16 @@ export const LOCALITIES = [
   ['Dabhoi, Vadodara', '/images/dabhoi_74392.jpg'],
   ['Atladra, Vadodara', '/images/atlardra_53561.jpg'],
   ['Halol, Panchmahal', '/images/985810_1-350x350.jpg'],
-  ['Halol, Vadodara', PLACEHOLDER],
+  ['Halol, Vadodara', '/images/985810_1-350x350.jpg'],
+  ['Sherkhi, Vadodara', '/images/listings/1019747.jpg'],
+  ['Fatehgunj, Vadodara', '/images/alkapuri_56161.jpg'],
+  ['Hari Nagar, Vadodara', '/images/vasna-road_33384.jpg'],
+  ['Waghodia, Vadodara', '/images/973051_5-350x350.jpg'],
+  ['Tarsali, Vadodara', '/images/570422.jpg'],
+  ['GIDC, Bharuch', '/images/1371485_1-350x350.jpg'],
+  ['Dabhoi R S, Vadodara', '/images/dabhoi_74392.jpg'],
+  ['Sama Savli Road, Vadodara', '/images/savli-town_59293.jpg'],
+  ['Gotri Road, Vadodara', '/images/gotri_14991.jpg'],
   ['Saykha Industrial Zone, Bharuch', '/images/1394161_1-350x350.jpg'],
   ['Mahapura, Vadodara', '/images/990429_1-350x350.jpg'],
   ['Dandia Bazar, Vadodara', '/images/dandia-bazar_18414.jpg'],
@@ -367,6 +169,65 @@ export const TESTIMONIALS = [
   ['Baroda Realtor agent helped me understand property title insurance benefits', 'Genesis Homes'],
 ].map(([quote, name]) => ({ quote, name }))
 
+
+export const PROJECT = {
+  slug: 'aashray-elegance',
+  title: 'Aashray Elegance',
+  location: 'Gotri Sevasi Road, Gotri Road, Vadodara, Gujarat',
+  image: '/images/flipbook/flip-189866.jpg',
+  type: 'Flats & Apartments',
+  unit: '3.5 BHK',
+  area: '1267 Sq.ft.',
+  possession: 'December 2027',
+  rera: 'PR/GJ/VADODARA/VADODARA/Others/MAA10527/020822',
+  status: 'Under construction',
+  paragraphs: [
+    'Aashray Elegance is a Baroda Realtor project of residential apartments on Gotri Sevasi Road, Vadodara. The homes are planned with contemporary finishes and a practical 1267 sq.ft. layout.',
+    'The project sits in Bhayli and Gotri, with connections to schools, hospitals, and the main city hubs. Possession is scheduled for December 2027.',
+    'Baroda Realtor is offering 3.5 BHK apartments in this project. Ask for the current price, floor options, and site visit.',
+  ],
+  facts: [
+    ['Project type', 'Flats & Apartments'],
+    ['Configuration', '3.5 BHK'],
+    ['Area', '1267 Sq.ft.'],
+    ['Location', 'Gotri Road, Vadodara'],
+    ['Possession', 'December 2027'],
+    ['RERA', 'PR/GJ/VADODARA/VADODARA/Others/MAA10527/020822'],
+  ],
+}
+
+export const FLIPBOOK = [
+  '/images/flipbook/flip-189866.jpg',
+  '/images/flipbook/flip-189867.jpg',
+  '/images/flipbook/flip-189868.jpg',
+  '/images/flipbook/flip-189869.jpg',
+  '/images/flipbook/flip-189870.jpg',
+  '/images/flipbook/flip-189871.jpg',
+  '/images/flipbook/flip-189872.jpg',
+  '/images/flipbook/flip-189873.jpg',
+]
+
+export const CAREER_QUALIFICATIONS = [
+  'Higher Secondary',
+  'Diploma',
+  'B.Com',
+  'B.B.A',
+  'B.Sc',
+  'B.Tech / B.E',
+  'M.B.A / PGDM',
+  'M.Com',
+  'Other',
+]
+
+export const CAREER_AREAS = [
+  'Sales / Business Development',
+  'Real Estate / Property Consulting',
+  'Customer Service',
+  'Accounts',
+  'Administration',
+  'Other',
+]
+
 export const PROPERTY_TYPES = [
   'Flats & Apartments',
   'Individual Houses',
@@ -377,6 +238,8 @@ export const PROPERTY_TYPES = [
   'Factory / Industrial Building',
   'Industrial Land / Plot',
   'Office Space',
+  'Warehouse / Godown',
+  'Business Center',
 ]
 
 export const CATEGORIES = [
@@ -440,13 +303,33 @@ export const BUDGETS = [
   { id: 'above-200', label: 'Above ₹2 Cr', min: 20000000 },
 ]
 
+export function formatPrice(price) {
+  if (!price || price === 'On request') return 'Price on request'
+  if (String(price).includes('₹')) return price
+  return `₹ ${price}`
+}
+
 export function priceToNumber(price) {
-  const match = String(price).replace(/,/g, '').match(/[\d.]+/)
-  if (!match || /request/i.test(price)) return null
+  const text = String(price)
+  if (/request|\/|month|vigha|per /i.test(text)) return null
+  const match = text.replace(/,/g, '').match(/[\d.]+/)
+  if (!match) return null
   const value = Number(match[0])
-  if (/cr/i.test(price)) return value * 10000000
-  if (/lac/i.test(price)) return value * 100000
+  if (/cr/i.test(text)) return value * 10000000
+  if (/lac/i.test(text)) return value * 100000
   return null
+}
+
+export function matchesLocality(property, place) {
+  const [area, city = ''] = place.name.split(',').map((part) => part.trim())
+  const propertyCity = (property.city || '').trim()
+  if (city && propertyCity && city.toLowerCase() !== propertyCity.toLowerCase()) return false
+  const skip = new Set(['road', 'area', 'zone', 'near', 'sale', 'rent', 'plot'])
+  const words = (value) => value.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 3 && !skip.has(word))
+  const wanted = words(area)
+  const found = words(property.location)
+  if (!wanted.length) return property.location.toLowerCase().includes(area.toLowerCase())
+  return wanted.every((word) => found.includes(word))
 }
 
 export function getProperty(slug) {

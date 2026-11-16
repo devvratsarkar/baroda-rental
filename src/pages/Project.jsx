@@ -1,23 +1,37 @@
 import { Link } from 'react-router-dom'
 import EnquiryForm from '../components/EnquiryForm'
+import PageIntro from '../components/PageIntro'
+import { PROJECT } from '../data/content'
 
 export default function ProjectPage() {
   return (
     <>
-      <section className="page-hero" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(/images/gotri_14991.jpg)' }}>
-        <div className="wrap">
-          <p className="crumbs">Home / Our Projects / Aashray Elegance</p>
-          <h1>Aashray Elegance</h1>
-        </div>
-      </section>
-      <section className="section">
-        <div className="wrap detail">
+      <PageIntro
+        eyebrow={PROJECT.status}
+        title={PROJECT.title}
+        lead={PROJECT.location}
+        crumbs={[{ label: 'Our Projects', to: '/projects' }, { label: PROJECT.title }]}
+      />
+      <section className="section section-tight">
+        <div className="wrap layout">
           <div>
-            <p>Aashray Elegance is a Baroda Realtor project in Gotri Road, Vadodara.</p>
-            <p>Ask for the current availability, price, and site details. Nearby homes in Gotri are also listed with the agency.</p>
-            <Link className="btn" to="/localities/gotri-vadodara">Properties in Gotri</Link>
+            <img className="detail-photo" src={PROJECT.image} alt={PROJECT.title} />
+            <div className="fact-grid">
+              {PROJECT.facts.map(([label, value]) => (
+                <div key={label}><span>{label}</span><strong>{value}</strong></div>
+              ))}
+            </div>
+            <h2>About the project</h2>
+            <div className="prose">
+              {PROJECT.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <Link className="btn" to="/localities/gotri-road-vadodara">Properties in Gotri</Link>
           </div>
-          <EnquiryForm subject="Aashray Elegance" />
+          <aside className="side-card">
+            <h2>Ask for availability</h2>
+            <p className="muted">Price, floor, and a site visit for {PROJECT.title}.</p>
+            <EnquiryForm subject={PROJECT.title} />
+          </aside>
         </div>
       </section>
     </>

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+import { formatPrice } from '../data/content'
 
 export default function PropertyCard({ property }) {
-  const price = property.price === 'On request' ? 'Price on request' : `₹ ${property.price}`
+  const price = formatPrice(property.price)
   const details = [property.status, property.bhk, property.size].filter(Boolean).join('  ·  ')
 
   return (

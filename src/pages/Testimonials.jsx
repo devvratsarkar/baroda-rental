@@ -1,15 +1,17 @@
+import AskBand from '../components/AskBand'
+import PageIntro from '../components/PageIntro'
 import { TESTIMONIALS } from '../data/content'
 
 export default function TestimonialsPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap">
-          <p className="crumbs">Home / Testimonials</p>
-          <h1>Testimonials</h1>
-        </div>
-      </section>
-      <section className="section">
+      <PageIntro
+        eyebrow="Clients"
+        title="Testimonials"
+        lead="Notes from people who bought, sold, or rented with Baroda Realtor."
+        crumbs={[{ label: 'Testimonials' }]}
+      />
+      <section className="section section-tight">
         <div className="wrap grid cards-3">
           {TESTIMONIALS.map((item) => (
             <blockquote className="quote-card" key={item.name + item.quote}>
@@ -19,6 +21,7 @@ export default function TestimonialsPage() {
           ))}
         </div>
       </section>
+      <AskBand />
     </>
   )
 }

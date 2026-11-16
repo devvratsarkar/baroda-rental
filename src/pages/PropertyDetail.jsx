@@ -1,7 +1,8 @@
 import { Link, useParams } from 'react-router-dom'
 import EnquiryForm from '../components/EnquiryForm'
+import PageIntro from '../components/PageIntro'
 import PropertyCard from '../components/PropertyCard'
-import { PROPERTIES, getProperty } from '../data/content'
+import { PROPERTIES, formatPrice, getProperty } from '../data/content'
 
 export default function PropertyDetailPage() {
   const { slug } = useParams()
@@ -18,36 +19,52 @@ export default function PropertyDetailPage() {
     )
   }
 
-  const related = PROPERTIES.filter((item) => item.slug !== property.slug && item.city === property.city).slice(0, 3)
+  const related = PROPERTIES.filter((item) => item.slug !== property.slug && (
+    item.location === property.location || item.type === property.type
+  )).slice(0, 3)
+  const facts = [
+    ['Price', formatPrice(property.price)],
+    ['Status', property.status],
+    ['Location', property.location],
+    ['Type', property.type],
+    property.bhk ? ['Bedrooms', property.bhk] : null,
+    property.size ? ['Area', property.size] : null,
+  ].filter(Boolean)
 
   return (
     <>
-      <section className="page-hero">
-        <div className="wrap">
-          <p className="crumbs">Home / Properties / {property.location}</p>
-          <h1>{property.title}</h1>
-        </div>
-      </section>
-      <section className="section">
-        <div className="wrap detail">
+      <PageIntro
+        eyebrow={property.status}
+        title={property.title}
+        lead={property.location}
+        crumbs={[{ label: 'Properties', to: '/properties' }, { label: property.location }]}
+      >
+        <p className="intro-price">{formatPrice(property.price)}</p>
+      </PageIntro>
+      <section className="section section-tight">
+        <div className="wrap layout">
           <div>
             <img className="detail-photo" src={property.image} alt={property.title} />
-            <div className="facts">
-              <div><span>Price</span><strong>{property.price === 'On request' ? 'On request' : `₹ ${property.price}`}</strong></div>
-              <div><span>Status</span><strong>{property.status}</strong></div>
-              <div><span>Location</span><strong>{property.location}</strong></div>
-              <div><span>Type</span><strong>{property.type}</strong></div>
-              {property.bhk ? <div><span>Bedroom</span><strong>{property.bhk}</strong></div> : null}
-              {property.size ? <div><span>Area</span><strong>{property.size}</strong></div> : null}
+            <div className="fact-grid">
+              {facts.map(([label, value]) => (
+                <div key={label}><span>{label}</span><strong>{value}</strong></div>
+              ))}
             </div>
             <h2>Description</h2>
-            <p>{property.description}</p>
+            <div className="prose"><p>{property.description}</p></div>
           </div>
-          <EnquiryForm subject={property.title} />
+          <aside className="side-card">
+            <h2>Enquire about this property</h2>
+            <p className="muted">Hareshbhai will reply with price, visit time, and papers.</p>
+            <EnquiryForm subject={property.title} />
+          </aside>
         </div>
         {related.length > 0 ? (
-          <div className="wrap" style={{ marginTop: 48 }}>
-            <h2>More in {property.city}</h2>
+          <div className="wrap related">
+            <div className="section-head">
+              <p className="eyebrow">Similar</p>
+              <h2>More properties you can consider</h2>
+            </div>
             <div className="grid cards-3">
               {related.map((item) => <PropertyCard key={item.id} property={item} />)}
             </div>

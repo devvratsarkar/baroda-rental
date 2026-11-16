@@ -5,9 +5,9 @@ import { COMPANY } from '../data/content'
 const LINKS = [
   ['/', 'Home'],
   ['/properties', 'Properties'],
+  ['/projects', 'Projects'],
+  ['/services', 'Services'],
   ['/about', 'About'],
-  ['/services/rental-property', 'Services'],
-  ['/testimonials', 'Testimonials'],
   ['/contact', 'Contact'],
 ]
 

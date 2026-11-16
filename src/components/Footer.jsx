@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ABOUT, COMPANY, PROPERTIES } from '../data/content'
+import { ABOUT, COMPANY, PROPERTIES, formatPrice } from '../data/content'
 
 export default function Footer() {
   const featured = PROPERTIES.filter((property) => property.featured).slice(0, 2)
@@ -21,7 +21,7 @@ export default function Footer() {
               <span>
                 <strong>{property.title}</strong>
                 <em>{property.location}</em>
-                <b>₹ {property.price}</b>
+                <b>{formatPrice(property.price)}</b>
               </span>
             </Link>
           ))}
@@ -33,7 +33,18 @@ export default function Footer() {
           <a href={COMPANY.phoneHref}>{COMPANY.phone}</a>
           <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
           <a href={COMPANY.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
-          <Link to="/">{COMPANY.name}</Link>
+          <nav className="footer-links" aria-label="Explore">
+            <Link to="/properties">Properties</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/testimonials">Testimonials</Link>
+            <Link to="/emi-calculator">EMI Calculator</Link>
+            <Link to="/area-converter">Area Converter</Link>
+            <Link to="/post-property">Post Property</Link>
+            <Link to="/career">Career</Link>
+            <Link to="/brochure">Brochure</Link>
+            <Link to="/sitemap">Sitemap</Link>
+          </nav>
         </div>
       </div>
 

@@ -1,11 +1,21 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import PageIntro from '../components/PageIntro'
 import PropertyCard from '../components/PropertyCard'
-import { BHK_OPTIONS, BUDGETS, LOCALITIES, PROPERTIES, PROPERTY_TYPES, priceToNumber } from '../data/content'
+import {
+  BHK_OPTIONS,
+  BUDGETS,
+  LOCALITIES,
+  PROPERTIES,
+  PROPERTY_TYPES,
+  matchesLocality,
+  priceToNumber,
+} from '../data/content'
 
 export default function PropertiesPage() {
   const [params, setParams] = useSearchParams()
   const location = params.get('location') || ''
+  const city = params.get('city') || ''
   const intent = params.get('intent') || ''
   const type = params.get('type') || ''
   const bhk = params.get('bhk') || ''
@@ -13,8 +23,11 @@ export default function PropertiesPage() {
 
   const results = useMemo(() => {
     const range = BUDGETS.find((item) => item.id === budget)
+    const place = LOCALITIES.find((item) => item.name === location)
     return PROPERTIES.filter((property) => {
-      if (location && !property.location.toLowerCase().includes(location.toLowerCase().split(',')[0])) return false
+      if (city && property.city.toLowerCase() !== city.toLowerCase()) return false
+      if (place && !matchesLocality(property, place)) return false
+      if (location && !place && !property.location.toLowerCase().includes(location.toLowerCase().split(',')[0])) return false
       if (intent && property.intent !== intent) return false
       if (type && property.type !== type) return false
       if (bhk && property.bhk !== bhk) return false
@@ -26,7 +39,7 @@ export default function PropertiesPage() {
       }
       return true
     })
-  }, [location, intent, type, bhk, budget])
+  }, [location, city, intent, type, bhk, budget])
 
   function update(key, value) {
     const next = new URLSearchParams(params)
@@ -35,39 +48,57 @@ export default function PropertiesPage() {
     setParams(next)
   }
 
+  const title = city ? `Property in ${city}` : type || 'Find Property'
+
   return (
     <>
-      <section className="page-hero">
+      <PageIntro
+        eyebrow="Listings"
+        title={title}
+        lead="Homes, plots, shops, offices, and industrial land listed with Baroda Realtor."
+        crumbs={[{ label: 'Find Property' }]}
+      />
+      <section className="section section-tight">
         <div className="wrap">
-          <p className="crumbs">Home / Find Property</p>
-          <h1>Find Property</h1>
-        </div>
-      </section>
-      <section className="section">
-        <div className="wrap">
-          <div className="filters">
-            <select value={location} onChange={(event) => update('location', event.target.value)}>
-              <option value="">All localities</option>
-              {LOCALITIES.map((place) => <option key={place.slug}>{place.name}</option>)}
-            </select>
-            <select value={intent} onChange={(event) => update('intent', event.target.value)}>
-              <option value="">Buy or rent</option>
-              <option value="Buy">Buy</option>
-              <option value="Rent">Rent</option>
-            </select>
-            <select value={type} onChange={(event) => update('type', event.target.value)}>
-              <option value="">Any type</option>
-              {PROPERTY_TYPES.map((item) => <option key={item}>{item}</option>)}
-            </select>
-            <select value={bhk} onChange={(event) => update('bhk', event.target.value)}>
-              <option value="">Any bedroom</option>
-              {BHK_OPTIONS.map((item) => <option key={item}>{item}</option>)}
-            </select>
-            <select value={budget} onChange={(event) => update('budget', event.target.value)}>
-              <option value="">Any budget</option>
-              {BUDGETS.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
-            </select>
+          <div className="filter-panel">
+            <label>
+              Locality
+              <select value={location} onChange={(event) => update('location', event.target.value)}>
+                <option value="">All localities</option>
+                {LOCALITIES.map((place) => <option key={place.slug}>{place.name}</option>)}
+              </select>
+            </label>
+            <label>
+              Intent
+              <select value={intent} onChange={(event) => update('intent', event.target.value)}>
+                <option value="">Buy or rent</option>
+                <option value="Buy">Buy</option>
+                <option value="Rent">Rent</option>
+              </select>
+            </label>
+            <label>
+              Type
+              <select value={type} onChange={(event) => update('type', event.target.value)}>
+                <option value="">Any type</option>
+                {PROPERTY_TYPES.map((item) => <option key={item}>{item}</option>)}
+              </select>
+            </label>
+            <label>
+              Bedrooms
+              <select value={bhk} onChange={(event) => update('bhk', event.target.value)}>
+                <option value="">Any bedroom</option>
+                {BHK_OPTIONS.map((item) => <option key={item}>{item}</option>)}
+              </select>
+            </label>
+            <label>
+              Budget
+              <select value={budget} onChange={(event) => update('budget', event.target.value)}>
+                <option value="">Any budget</option>
+                {BUDGETS.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
+              </select>
+            </label>
           </div>
+          <p className="result-line">{results.length} {results.length === 1 ? 'property' : 'properties'}</p>
           {results.length === 0 ? (
             <div className="empty">
               <h2>No matching properties</h2>
