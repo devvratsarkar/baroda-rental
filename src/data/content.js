@@ -56,7 +56,7 @@ export const ABOUT = {
   ],
 }
 
-const BANNER_IDS = ['1179684', '1141967']
+const BANNER_IDS = ['1229809', '1141967', '1179684',]
 
 export const HERO = BANNER_IDS.map((id) => {
   const item = PROPERTIES.find((property) => property.id === id)
